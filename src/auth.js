@@ -1,3 +1,15 @@
+import { db } from "./firebase.js";
+import { collection, getDocs } from "firebase/firestore";
+
+//読み込みテスト
+async function listDocuments(db) {
+    const citiesCol = collection(db, "OneTimePass");
+    const citySnapshot = await getDocs(citiesCol);
+    const cityList = citySnapshot.docs.map((doc) => doc.data());
+    console.log(cityList);
+}
+listDocuments(db);
+
 //ワンタイムパスコードを生成
 function generateOneTimePasscode() {
     const length = 6;
@@ -25,5 +37,6 @@ document.querySelector("button").onclick = function () {
 document.querySelector("form").addEventListener("submit", function (event) {
     event.preventDefault();
     const passcode = document.getElementById("passcode").value;
+    loginGoogle();
     // alert("Entered passcode: " + passcode);
 });
