@@ -11,4 +11,13 @@ function generateOneTimePasscode() {
     return passcode;
 }
 
-console.log(generateOneTimePasscode());
+// ワンタイムパスコードを認証
+function verifyOneTimePasscode(inputPasscode, actualPasscode) {
+    return inputPasscode === actualPasscode;
+}
+// console.log(generateOneTimePasscode());
+
+document.querySelector("button").onclick = function () {
+    const result = generateOneTimePasscode();
+    document.querySelector("p").innerText = result;
+};
