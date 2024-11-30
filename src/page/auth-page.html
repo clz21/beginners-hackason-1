@@ -3,13 +3,17 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script type="module" src="../auth.js"></script>
         <title>Vite App</title>
     </head>
     <body>
         <div id="app"></div>
         <button onclick>SHOW PassCode</button>
         <p></p>
-        <script type="module" src="../auth.js"></script>
-        Hello World
+        <form action="">
+            <label for="passcode">相手のパスコードを入力</label>
+            <input type="text" id="passcode" name="passcode" />
+            <button type="submit">認証</button>
+        </form>
     </body>
 </html>

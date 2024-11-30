@@ -15,9 +15,15 @@ function generateOneTimePasscode() {
 function verifyOneTimePasscode(inputPasscode, actualPasscode) {
     return inputPasscode === actualPasscode;
 }
-// console.log(generateOneTimePasscode());
+// alert(generateOneTimePasscode());
 
 document.querySelector("button").onclick = function () {
     const result = generateOneTimePasscode();
     document.querySelector("p").innerText = result;
 };
+
+document.querySelector("form").addEventListener("submit", function (event) {
+    event.preventDefault();
+    const passcode = document.getElementById("passcode").value;
+    // alert("Entered passcode: " + passcode);
+});
