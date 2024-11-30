@@ -1,5 +1,5 @@
 import { db } from "./firebase.js";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, addDoc } from "firebase/firestore";
 
 //読み込みテスト
 async function listDocuments(db) {
@@ -9,6 +9,22 @@ async function listDocuments(db) {
     console.log(cityList);
 }
 listDocuments(db);
+
+// //書き込みテスト
+// async function addOneTimePass(db, name, pass) {
+//     try {
+//         const docRef = await addDoc(collection(db, "OneTimePass"), {
+//             name: name,
+//             pass: pass,
+//             timestamp: new Date(),
+//         });
+//         console.log("Document written with ID: ", docRef.id);
+//     } catch (e) {
+//         console.error("Error adding document: ", e);
+//     }
+// }
+// const pass = generateOneTimePasscode();
+// addOneTimePass(db, pass, pass);
 
 //ワンタイムパスコードを生成
 function generateOneTimePasscode() {
