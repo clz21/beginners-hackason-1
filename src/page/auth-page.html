@@ -3,17 +3,18 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script type="module" src="../auth.js"></script>
+        <script type="module" src="../auth-page.js"></script>
         <title>Vite App</title>
     </head>
     <body>
         <div id="app"></div>
-        <button onclick>SHOW PassCode</button>
-        <p></p>
+        <button id="show-button">SHOW PassCode</button>
+        <p id="otp-show"></p>
         <form action="">
             <label for="passcode">相手のパスコードを入力</label>
             <input type="text" id="passcode" name="passcode" />
             <button type="submit">認証</button>
         </form>
+        <p id="otp-verify"></p>
     </body>
 </html>
