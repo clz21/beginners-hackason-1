@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>アイコンでページ遷移</title>
+        <!-- Google Material Icons -->
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+        <style>
+            /* アイコンのスタイル */
+            .icon {
+                font-size: 48px;
+                color: #555;
+                cursor: pointer; /* カーソルをポインタに変更 */
+                margin: 20px;
+            }
+            .icon:hover {
+                color: #007bff; /* ホバー時の色変更 */
+            }
+        </style>
+    </head>
+    <body>
+        <!-- アイコン表示 -->
+        <div>
+            <span
+                id="icon"
+                class="material-icons icon"
+                onclick="redirectToPage()"
+                >account_circle</span
+            >
+        </div>
+
+        <script>
+            // アイコンをクリックしたときにページ遷移
+            function redirectToPage() {
+                window.location.href = "seisei.html"; // 遷移先のページを指定
+            }
+        </script>
+    </body>
+</html>

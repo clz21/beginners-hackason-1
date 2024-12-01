@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>質問応答ページ</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                line-height: 1.6;
+            }
+            input,
+            button {
+                font-size: 16px;
+                padding: 10px;
+                margin: 5px 0;
+                width: 100%;
+                max-width: 400px;
+            }
+            #answer {
+                margin-top: 20px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>質問を入力してください</h1>
+        <p>以下のボックスに質問を入力し、ボタンを押してください。</p>
+        <input type="text" id="question" placeholder="ここに質問を入力" />
+        <button onclick="getAnswer()">質問する</button>
+        <div id="answer"></div>
+
+        <script>
+            function getAnswer() {
+                const question = document
+                    .getElementById("question")
+                    .value.trim();
+                const answerElement = document.getElementById("answer");
+
+                if (question === "") {
+                    answerElement.textContent = "質問を入力してください。";
+                    return;
+                }
+
+                // 簡易的なAIの模倣
+                let answer = "";
+                switch (true) {
+                    case question.includes("天気"):
+                        answer = "天気に関する情報はこちらをご覧ください。";
+                        break;
+                    case question.includes("名前"):
+                        answer =
+                            "私はAIです。名前はありませんが、何でもお答えします！";
+                        break;
+                    default:
+                        answer = "それは良い質問ですね！少し調べてみます。";
+                }
+
+                answerElement.textContent = `質問：「${question}」\n答え：${answer}`;
+            }
+        </script>
+    </body>
+</html>
